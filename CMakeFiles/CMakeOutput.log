@@ -633,3 +633,168 @@ make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/g
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_51d40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_51d40.dir/build.make CMakeFiles/cmTC_51d40.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51d40.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_51d40.dir/CheckIncludeFile.c.o   -c "/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_51d40
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51d40.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_51d40.dir/CheckIncludeFile.c.o  -o cmTC_51d40 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8baf6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8baf6.dir/build.make CMakeFiles/cmTC_8baf6.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8baf6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8baf6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8baf6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8baf6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8baf6.dir/CheckFunctionExists.c.o  -o cmTC_8baf6 -lpthread 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3382a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3382a.dir/build.make CMakeFiles/cmTC_3382a.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3382a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_3382a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3382a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3382a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    -rdynamic CMakeFiles/cmTC_3382a.dir/CheckFunctionExists.c.o  -o cmTC_3382a /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_798cf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_798cf.dir/build.make CMakeFiles/cmTC_798cf.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_798cf.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_798cf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_798cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_798cf.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname    -rdynamic CMakeFiles/cmTC_798cf.dir/CheckFunctionExists.c.o  -o cmTC_798cf 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_92496/fast"
+/usr/bin/make -f CMakeFiles/cmTC_92496.dir/build.make CMakeFiles/cmTC_92496.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_92496.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_92496.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_92496
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92496.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_92496.dir/CheckFunctionExists.c.o  -o cmTC_92496 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7ec53/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7ec53.dir/build.make CMakeFiles/cmTC_7ec53.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7ec53.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_7ec53.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ec53
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ec53.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove    -rdynamic CMakeFiles/cmTC_7ec53.dir/CheckFunctionExists.c.o  -o cmTC_7ec53 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_433a0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_433a0.dir/build.make CMakeFiles/cmTC_433a0.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_433a0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_433a0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_433a0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_433a0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat    -rdynamic CMakeFiles/cmTC_433a0.dir/CheckFunctionExists.c.o  -o cmTC_433a0 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3c4e9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3c4e9.dir/build.make CMakeFiles/cmTC_3c4e9.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3c4e9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_3c4e9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3c4e9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c4e9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    -rdynamic CMakeFiles/cmTC_3c4e9.dir/CheckFunctionExists.c.o  -o cmTC_3c4e9 -lICE 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+
+Performing C++ SOURCE FILE Test HAS_CPP14_FLAG succeeded with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8caa9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8caa9.dir/build.make CMakeFiles/cmTC_8caa9.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8caa9.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wextra -DHAS_CPP14_FLAG   -std=c++14 -o CMakeFiles/cmTC_8caa9.dir/src.cxx.o -c "/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTC_8caa9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8caa9.dir/link.txt --verbose=1
+/usr/bin/c++   -Wall -Wextra -DHAS_CPP14_FLAG    -rdynamic CMakeFiles/cmTC_8caa9.dir/src.cxx.o  -o cmTC_8caa9 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAS_CPP11_FLAG succeeded with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_55073/fast"
+/usr/bin/make -f CMakeFiles/cmTC_55073.dir/build.make CMakeFiles/cmTC_55073.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_55073.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wextra -DHAS_CPP11_FLAG   -std=c++11 -o CMakeFiles/cmTC_55073.dir/src.cxx.o -c "/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTC_55073
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55073.dir/link.txt --verbose=1
+/usr/bin/c++   -Wall -Wextra -DHAS_CPP11_FLAG    -rdynamic CMakeFiles/cmTC_55073.dir/src.cxx.o  -o cmTC_55073 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAS_LTO succeeded with the following output:
+Change Dir: /home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_572aa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_572aa.dir/build.make CMakeFiles/cmTC_572aa.dir/build
+make[1]: Entering directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_572aa.dir/src.cxx.o
+/usr/bin/c++    -fvisibility=hidden  -Wall -Wextra -std=c++14 -DHAS_LTO -flto -fno-fat-lto-objects   -o CMakeFiles/cmTC_572aa.dir/src.cxx.o -c "/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx"
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main(int, char**)’:
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx:1:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main(int argc, char **argv) { return 0; }
+              ^~~~
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp/src.cxx:1:27: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main(int argc, char **argv) { return 0; }
+                           ^~~~
+Linking CXX executable cmTC_572aa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_572aa.dir/link.txt --verbose=1
+/usr/bin/c++  -fvisibility=hidden  -Wall -Wextra -std=c++14 -DHAS_LTO -flto -fno-fat-lto-objects    -rdynamic CMakeFiles/cmTC_572aa.dir/src.cxx.o  -o cmTC_572aa -flto 
+make[1]: Leaving directory '/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/CMakeTmp'
+
+Return value: 1
+Source file was:
+int main(int argc, char **argv) { return 0; }

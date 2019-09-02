@@ -1,0 +1,13 @@
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/rebuild_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/gui.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/CMakeFiles/edit_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/CMakeFiles/rebuild_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/CMakeFiles/edit_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/CMakeFiles/nanogui-obj.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/CMakeFiles/nanogui.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/CMakeFiles/rebuild_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/CMakeFiles/edit_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/src/CMakeFiles/edit_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/src/CMakeFiles/rebuild_cache.dir
+/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui/ext_build/glfw/src/CMakeFiles/glfw.dir
