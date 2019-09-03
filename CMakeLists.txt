@@ -2,6 +2,7 @@
 set(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL " " FORCE)
 set(NANOGUI_BUILD_PYTHON  OFF CACHE BOOL " " FORCE)
 set(NANOGUI_INSTALL       OFF CACHE BOOL " " FORCE)
+set(CMAKE_CXX_STANDARD    11)
 
 # Add the configurations from nanogui
 add_subdirectory(ext/nanogui)
