@@ -21,7 +21,7 @@ class ExampleApplication : public nanogui::Screen{
             int rgb[3];
 
             //create window
-            Window *window = new Window(this, "Windwow Color");
+            Window *window = new Window(this, "Window Color");
             window->setPosition(Vector2i(0,0));
             GridLayout *layout = new GridLayout(Orientation::Horizontal, 2, Alignment::Middle, 15, 5);
             layout->setColAlignment({Alignment::Maximum, Alignment::Fill});
