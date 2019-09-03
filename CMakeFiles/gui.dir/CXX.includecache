@@ -17,31 +17,17 @@ nanogui/label.h
 -
 nanogui/button.h
 -
-nanogui/toolbutton.h
--
-nanogui/popupbutton.h
--
-nanogui/combobox.h
--
-nanogui/progressbar.h
--
-nanogui/entypo.h
--
-nanogui/messagedialog.h
--
-nanogui/textbox.h
--
-nanogui/slider.h
--
-nanogui/colorwheel.h
--
 nanogui/colorpicker.h
 -
 iostream
 -
+type_traits
+-
 string
 -
 cstdlib
+-
+cstdint
 -
 
 ext/nanogui/ext/eigen/Eigen/Core
@@ -716,14 +702,6 @@ ext/nanogui/include/nanogui/colorpicker.h
 nanogui/popupbutton.h
 -
 
-ext/nanogui/include/nanogui/colorwheel.h
-nanogui/widget.h
--
-
-ext/nanogui/include/nanogui/combobox.h
-nanogui/popupbutton.h
--
-
 ext/nanogui/include/nanogui/common.h
 Eigen/Core
 -
@@ -748,10 +726,6 @@ cstdio
 unordered_map
 -
 
-ext/nanogui/include/nanogui/messagedialog.h
-nanogui/window.h
--
-
 ext/nanogui/include/nanogui/object.h
 nanogui/common.h
 -
@@ -770,34 +744,14 @@ nanogui/popup.h
 nanogui/entypo.h
 -
 
-ext/nanogui/include/nanogui/progressbar.h
-nanogui/widget.h
--
-
 ext/nanogui/include/nanogui/screen.h
 nanogui/widget.h
--
-
-ext/nanogui/include/nanogui/slider.h
-nanogui/widget.h
--
-
-ext/nanogui/include/nanogui/textbox.h
-nanogui/widget.h
--
-cstdio
--
-sstream
 -
 
 ext/nanogui/include/nanogui/theme.h
 nanogui/common.h
 -
 nanogui/object.h
--
-
-ext/nanogui/include/nanogui/toolbutton.h
-nanogui/button.h
 -
 
 ext/nanogui/include/nanogui/widget.h

@@ -144,22 +144,15 @@ CMakeFiles/gui.dir/gui.o: ext/nanogui/ext/eigen/Eigen/src/plugins/MatrixCwiseBin
 CMakeFiles/gui.dir/gui.o: ext/nanogui/ext/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/button.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/colorpicker.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/colorwheel.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/combobox.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/common.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/entypo.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/label.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/layout.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/messagedialog.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/object.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/popup.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/popupbutton.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/progressbar.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/screen.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/slider.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/textbox.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/theme.h
-CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/toolbutton.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/widget.h
 CMakeFiles/gui.dir/gui.o: ext/nanogui/include/nanogui/window.h
 

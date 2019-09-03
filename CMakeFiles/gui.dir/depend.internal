@@ -145,21 +145,14 @@ CMakeFiles/gui.dir/gui.o
  ext/nanogui/ext/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
  ext/nanogui/include/nanogui/button.h
  ext/nanogui/include/nanogui/colorpicker.h
- ext/nanogui/include/nanogui/colorwheel.h
- ext/nanogui/include/nanogui/combobox.h
  ext/nanogui/include/nanogui/common.h
  ext/nanogui/include/nanogui/entypo.h
  ext/nanogui/include/nanogui/label.h
  ext/nanogui/include/nanogui/layout.h
- ext/nanogui/include/nanogui/messagedialog.h
  ext/nanogui/include/nanogui/object.h
  ext/nanogui/include/nanogui/popup.h
  ext/nanogui/include/nanogui/popupbutton.h
- ext/nanogui/include/nanogui/progressbar.h
  ext/nanogui/include/nanogui/screen.h
- ext/nanogui/include/nanogui/slider.h
- ext/nanogui/include/nanogui/textbox.h
  ext/nanogui/include/nanogui/theme.h
- ext/nanogui/include/nanogui/toolbutton.h
  ext/nanogui/include/nanogui/widget.h
  ext/nanogui/include/nanogui/window.h

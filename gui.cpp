@@ -3,51 +3,22 @@
 #include <nanogui/layout.h>
 #include <nanogui/label.h>
 #include <nanogui/button.h>
-#include <nanogui/toolbutton.h>
-#include <nanogui/popupbutton.h>
-#include <nanogui/combobox.h>
-#include <nanogui/progressbar.h>
-#include <nanogui/entypo.h>
-#include <nanogui/messagedialog.h>
-#include <nanogui/textbox.h>
-#include <nanogui/slider.h>
-#include <nanogui/colorwheel.h>
 #include <nanogui/colorpicker.h>
 #include <iostream>
+#include <type_traits>
 #include <string>
 #include <cstdlib>
+#include <cstdint>
 
 
 
 class ExampleApplication : public nanogui::Screen{
-    private:
-
-        Screen* win = this;
-        int rgb[3];
-
-        void color(int* c){
-    
-            srand(time(NULL));
-            int r = rand() % 256;
-            int g = rand() % 256;
-            int b = rand() % 256;
-
-            c[0] = r;
-            c[1] = g;
-            c[2] = b;
-        }
-
-        void winColor(nanogui::Screen* win, nanogui::Color background){
-            win->setBackground(background);
-            std::cout <<  "New Screen Color: ["
-                      << background.r() << ", "
-                      << background.g() << ", "
-                      << background.b() << "]" << std::endl; 
-        }
-
     public:
-        ExampleApplication() : nanogui::Screen(Eigen::Vector2i(1000, 1000), "Color Button"){
+        ExampleApplication() : nanogui::Screen(Eigen::Vector2i(500, 500), "Color Button"){
             using namespace nanogui;
+
+            Screen* win = this;
+            int rgb[3];
 
             //create window
             Window *window = new Window(this, "Windwow Color");
@@ -59,12 +30,12 @@ class ExampleApplication : public nanogui::Screen{
 
             //create color picker widget
             new Label(window, "Background Color:", "sans-bold");
-            color(&(*rgb));
+            srand(time(NULL));
+            rgb[0] = rand() % 256;
+            rgb[1] = rand() % 256;
+            rgb[2] = rand() % 256;
             auto cp = new ColorPicker(window, {rgb[0], rgb[1], rgb[2], 255});
             cp->setFixedSize({100, 20});
-            if(cp->pushed){
-                winColor(win, cp->color);
-            }
             cp->setFinalCallback([](const Color &c){
                 std::cout <<  "ColorPicker Final Callback: ["
                           << c.r() << ", "
@@ -74,14 +45,40 @@ class ExampleApplication : public nanogui::Screen{
 
             //create style button widget
             new Label(window, "Random Color:", "sans-bold");
-            Button *b = window->add<Button>("Styled");
-            b->setCallback([]{std::cout << "Changed Color" << std::endl;});
-            if (b->pushed()){
-                color(&(*rgb));
-                winColor(win, Color(rgb[0], rgb[1], rgb[2], 255));
-                b->setBackgroundColor(Color(rgb[0], rgb[1], rgb[2], 255));
-                cp->setColor(Color(rgb[0], rgb[1], rgb[2], 255));
-            }
+            Button *b = window->add<Button>("Random Color");
+
+            //set colors
+            win->setBackground(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
+            b->setBackgroundColor(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
+            
+            //create callbacks for both
+            b->setCallback(
+                [win, b, cp]{
+                    const nanogui::Color col(rand()%256, rand()%256, rand()%256, 255);
+                    win->setBackground(col);
+                    b->setBackgroundColor(col);
+                    cp->setColor(col);
+                    std::cout <<  "New Screen Color: ["
+                              << col.r() << ", "
+                              << col.g() << ", "
+                              << col.b() << "]" << std::endl;
+
+                }
+            );
+            cp->setFinalCallback(
+                [win, b, cp](const Color &c){
+                    win->setBackground(c);
+                    b->setBackgroundColor(c);
+                    cp->setColor(c);
+                    std::cout <<  "New Screen Color: ["
+                              << c.r() << ", "
+                              << c.g() << ", "
+                              << c.b() << "]" << std::endl;
+                }
+            );
+
+            performLayout();
+            
         }
 };
 
