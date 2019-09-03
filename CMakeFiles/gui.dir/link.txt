@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/gui.dir/gui.o  -o gui  -L"/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui" -Wl,-rpath,"/home/alex/Dropbox/Projects/CPP/3D Graphics Engine/gui/ext/nanogui" ext/nanogui/libnanogui.so -lGL -lXxf86vm -lXrandr -lXinerama -lXcursor -lXi -lX11 -lpthread -lrt -ldl 

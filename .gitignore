@@ -12,3 +12,4 @@
 gui
 guitest.cpp
 Makefile
+CMakeFiles/
