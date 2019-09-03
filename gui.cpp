@@ -17,7 +17,6 @@ class ExampleApplication : public nanogui::Screen{
         ExampleApplication() : nanogui::Screen(Eigen::Vector2i(500, 500), "Color Button"){
             using namespace nanogui;
 
-            Screen* win = this;
             int rgb[3];
 
             //create window
@@ -48,14 +47,14 @@ class ExampleApplication : public nanogui::Screen{
             Button *b = window->add<Button>("Random Color");
 
             //set colors
-            win->setBackground(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
+            setBackground(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
             b->setBackgroundColor(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
             
             //create callbacks for both
             b->setCallback(
-                [win, b, cp]{
+                [this, b, cp]{
                     const nanogui::Color col(rand()%256, rand()%256, rand()%256, 255);
-                    win->setBackground(col);
+                    setBackground(col);
                     b->setBackgroundColor(col);
                     cp->setColor(col);
                     std::cout <<  "New Screen Color: ["
@@ -66,8 +65,8 @@ class ExampleApplication : public nanogui::Screen{
                 }
             );
             cp->setFinalCallback(
-                [win, b, cp](const Color &c){
-                    win->setBackground(c);
+                [this, b, cp](const Color &c){
+                    setBackground(c);
                     b->setBackgroundColor(c);
                     cp->setColor(c);
                     std::cout <<  "New Screen Color: ["
