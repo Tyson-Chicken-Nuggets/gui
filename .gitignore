@@ -1,15 +1,8 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-*.so
-
+#Other files and bins
 gui
 guitest.cpp
+
+#Cmake
 Makefile
 CMakeFiles/
+CMakeCache.txt
