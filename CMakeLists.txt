@@ -5,8 +5,10 @@ set(NANOGUI_INSTALL       OFF CACHE BOOL " " FORCE)
 set(CMAKE_CXX_STANDARD    11)
 
 # Add the configurations from nanogui
-add_subdirectory(ext/nanogui)
-include_directories(ext/nanogui/include)
+add_subdirectory(lib/nanogui)
+include_directories(lib/nanogui/include)
+
+include_directories(lib)
 
 # For reliability of parallel build, make the NanoGUI targets dependencies
 set_property(TARGET glfw glfw_objects nanogui PROPERTY FOLDER "dependencies")
