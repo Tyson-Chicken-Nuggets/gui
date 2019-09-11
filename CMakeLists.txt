@@ -20,8 +20,10 @@ add_definitions(${NANOGUI_EXTRA_DEFS})
 include_directories(${NANOGUI_EXTRA_INCS})
 
 # Compile a target using NanoGUI
+add_executable(testgui testgui.cpp)
 add_executable(gui gui.cpp)
 
 # Lastly, additional libraries may have been built for you.  In addition to linking
 # against NanoGUI, we need to link against those as well.
+target_link_libraries(testgui nanogui ${NANOGUI_EXTRA_LIBS})
 target_link_libraries(gui nanogui ${NANOGUI_EXTRA_LIBS})

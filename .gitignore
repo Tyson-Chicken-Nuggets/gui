@@ -1,6 +1,6 @@
 #Other files and bins
 gui
-guitest.cpp
+testgui
 
 #Cmake
 Makefile
