@@ -59,8 +59,8 @@ namespace PerlinNoise{
             }
 
             //sets seed to value passed or random value
-            void seed(double newSeed=NULL){
-                newSeed!=NULL ? seed_v = newSeed : seed_v = (double)rng();
+            void seed(double newSeed=0){
+                newSeed!=0 ? seed_v = newSeed : seed_v = (double)rng();
                 pop_p(newSeed);
             }
 
@@ -107,7 +107,7 @@ namespace PerlinNoise{
             }
             
             //generates 3D noise using octaves for finer detail
-            double const octaveNoise(double x, double y, double z, std::int32_t octaves=6, double impedence=2){
+            double const octaveNoise(double x, double y, double z, int octaves=6, double impedence=2){
                 
                 double total = 0.0;
                 double amplitude = 1.0;
@@ -122,9 +122,8 @@ namespace PerlinNoise{
                 return total;
             }
     };
-    Perlin3D Noise3D;
 
-    class Perlin2D{
+    class Perlin2D : private Perlin3D{
         public:
             
             //setting up std::shuffle
@@ -139,19 +138,19 @@ namespace PerlinNoise{
             }
 
             //sets seed to the vaule passed or random value
-            void seed(double newSeed=NULL){
-                newSeed!=NULL ? seed_v = newSeed : seed_v = (double)rng();
-                Noise3D.seed(seed_v);
+            void seed(double newSeed=0){
+                newSeed!=0 ? seed_v = newSeed : seed_v = (double)rng();
+                Perlin3D::seed(seed_v);
             }
 
             //reuses the 3D noise function
             double const noise(double x, double y){
-                return Noise3D.noise(x, y, 0.0);
+                return Perlin3D::noise(x, y, 0.0);
             }
             
             //reuses the 3D octaveNoise function
-            double const octaveNoise(double x, double y, std::int32_t octaves=6, int impedence=2){
-                return Noise3D.octaveNoise(x, y, 0.0, octaves, impedence);
+            double const octaveNoise(double x, double y, int octaves=6, int impedence=2){
+                return Perlin3D::octaveNoise(x, y, 0.0, octaves, impedence);
             }
             
             //sets the seed for 2D and 3D noise
@@ -160,5 +159,7 @@ namespace PerlinNoise{
                 seed(rng());
             }
     };
+
+    Perlin3D Noise3D;
     Perlin2D Noise2D;
 }
