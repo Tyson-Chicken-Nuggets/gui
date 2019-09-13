@@ -34,7 +34,6 @@ class Noise2D : private PerlinNoise::Perlin2D{
 
     public:
 
-        #define FREQ 2.0
         #define DIM 512.0
         
         //create perlin noise from current dimensions and save to texture.bmp
@@ -49,28 +48,27 @@ class Noise2D : private PerlinNoise::Perlin2D{
             double ymin;
             double ymax;
             if (x > y){
-                ymin = (((y/x) * DIM) / 2) -1;
-                ymax = DIM - ymin;
+                ymin = (x-y)/2 - 1;
+                ymax = y - ymin;
                 xmin = 0;
-                xmax = DIM-1;
+                xmax = x;
             } else if (y > x) {
-                xmin = (((x/y) * DIM) / 2) -1;
-                xmax = DIM - xmin;
+                xmin = (y-x)/2 - 1;
+                xmax = x - xmin;
                 ymin = 0;
-                ymax = DIM-1;
+                ymax = y;
             } else {
                 xmin = 0;
-                xmax = DIM;
+                xmax = x;
                 ymin = 0;
-                ymax = DIM;
+                ymax = y;
             }
-            double yfreq = (ymax - ymin)/2;
-            double xfreq = (xmax - xmin)/2;
+            double freq = 256;
             bitmap_image image((const unsigned int)(xmax-xmin), 
                                (const unsigned int)(ymax-ymin));
             for (int xm=(int)xmin; xm<(int)xmax; xm++){
                 for (int ym=(int)ymin; ym<(int)ymax; ym++){
-                    double weight = octaveNoise(xm / xfreq, ym / yfreq);
+                    double weight = octaveNoise(xm / freq, ym / freq);
                     //convert noise to double between 0 and 1
                     weight += 1;
                     weight /= 2;
