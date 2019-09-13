@@ -1,6 +1,7 @@
 #Other files and bins
 gui
 testgui
+texture.bmp
 
 #Cmake
 Makefile

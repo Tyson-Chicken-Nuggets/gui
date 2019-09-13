@@ -25,9 +25,9 @@
     #pragma warning(disable: 4457 4456 4005 4312)
 #endif
 
-#define STB_IMAGE_STATIC
+/* #define STB_IMAGE_STATIC
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
+#include <stb_image.h> */
 
 class ExampleApplication : public nanogui::Screen{
     public:

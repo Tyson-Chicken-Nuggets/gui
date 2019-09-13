@@ -32,10 +32,60 @@
 //Add texture handling here
 class Noise2D : private PerlinNoise::Perlin2D{
 
-    //create perlin noise and save to bmp
-    void setImage(int x, int y){
+    public:
 
-    }
+        #define FREQ 2.0
+        #define DIM 512.0
+        
+        //create perlin noise from current dimensions and save to texture.bmp
+        void setImage(nanogui::Screen &win, double x, double y, bool resize=false){
+            
+            //set seed for new noise only on button callback
+            if (!resize) {seed();}
+
+            //generate noise with frequency
+            double xmin;
+            double xmax;
+            double ymin;
+            double ymax;
+            if (x > y){
+                ymin = (((y/x) * DIM) / 2) -1;
+                ymax = DIM - ymin;
+                xmin = 0;
+                xmax = DIM-1;
+            } else if (y > x) {
+                xmin = (((x/y) * DIM) / 2) -1;
+                xmax = DIM - xmin;
+                ymin = 0;
+                ymax = DIM-1;
+            } else {
+                xmin = 0;
+                xmax = DIM;
+                ymin = 0;
+                ymax = DIM;
+            }
+            double yfreq = (ymax - ymin)/2;
+            double xfreq = (xmax - xmin)/2;
+            bitmap_image image((const unsigned int)(xmax-xmin), 
+                               (const unsigned int)(ymax-ymin));
+            for (int xm=(int)xmin; xm<(int)xmax; xm++){
+                for (int ym=(int)ymin; ym<(int)ymax; ym++){
+                    double weight = octaveNoise(xm / xfreq, ym / yfreq);
+                    //convert noise to double between 0 and 1
+                    weight += 1;
+                    weight /= 2;
+                    //convert weight to grayscale for rgb
+                    double gray = (255*weight*0.3) + (255*weight*0.59) + (255*weight*0.11);
+                    image.set_pixel((const unsigned int)(xm-xmin),
+                                    (const unsigned int)(ym-ymin),
+                                    (const unsigned char)gray,
+                                    (const unsigned char)gray,
+                                    (const unsigned char)gray);
+                }
+            }
+            std::cout << "New texture generated with seed " << (int)Perlin2D::currentSeed() << std::endl;
+            image.save_image("texture.bmp");
+        }
 
 };
 
@@ -45,6 +95,9 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
             using namespace nanogui;
 
             int rgb[3];
+            
+            //create first texture upon initialization
+            setImage(*this, (double)mFBSize[0], (double)mFBSize[1]);
 
             //create window
             Window *window = new Window(this, "Window Color");
@@ -72,17 +125,35 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
             //create style button widget
             new Label(window, "Random Color:", "sans-bold");
             Button *b = window->add<Button>("Random Color");
+            
+            //create button that changes noise texture
+            new Label(window, "Change Background:", "sans-bold");
+            Button *tb = window->add<Button>("Random Texture");
+            tb->setCallback(
+                [this]{
+                    setImage(*this, (double)mFBSize[0], (double)mFBSize[1]);
+                }
+            );
 
             //set colors
             setBackground(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
             b->setBackgroundColor(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
-            
-            //create callbacks for both
+            tb->setBackgroundColor(nanogui::Color(rgb[0], rgb[1], rgb[2], 255));
+
+            //set resize callback for screen
+            setResizeCallback(
+                [this](const Eigen::Vector2i &s){
+                    setImage(*this, (double)s[0], (double)s[1], true);
+                }
+            );
+
+            //create callbacks for color changers
             b->setCallback(
-                [this, b, cp]{
+                [this, b, tb, cp]{
                     const nanogui::Color col(rand()%256, rand()%256, rand()%256, 255);
                     setBackground(col);
                     b->setBackgroundColor(col);
+                    tb->setBackgroundColor(col);
                     cp->setColor(col);
                     std::cout <<  "New Screen Color: ["
                               << col.r() << ", "
@@ -92,9 +163,10 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
                 }
             );
             cp->setFinalCallback(
-                [this, b, cp](const Color &c){
+                [this, b, tb, cp](const Color &c){
                     setBackground(c);
                     b->setBackgroundColor(c);
+                    tb->setBackgroundColor(c);
                     cp->setColor(c);
                     std::cout <<  "New Screen Color: ["
                               << c.r() << ", "

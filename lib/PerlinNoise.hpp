@@ -59,8 +59,8 @@ namespace PerlinNoise{
             }
 
             //sets seed to value passed or random value
-            void seed(double newSeed=0){
-                newSeed!=0 ? seed_v = newSeed : seed_v = (double)rng();
+            void seed(double newSeed=NULL){
+                newSeed!=NULL ? seed_v = newSeed : seed_v = (double)rng();
                 pop_p(newSeed);
             }
 
@@ -138,8 +138,8 @@ namespace PerlinNoise{
             }
 
             //sets seed to the vaule passed or random value
-            void seed(double newSeed=0){
-                newSeed!=0 ? seed_v = newSeed : seed_v = (double)rng();
+            void seed(double newSeed=NULL){
+                newSeed!=NULL ? seed_v = newSeed : seed_v = (double)rng();
                 Perlin3D::seed(seed_v);
             }
 
@@ -159,7 +159,4 @@ namespace PerlinNoise{
                 seed(rng());
             }
     };
-
-    Perlin3D Noise3D;
-    Perlin2D Noise2D;
 }
