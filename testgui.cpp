@@ -64,25 +64,39 @@ class Noise2D : private PerlinNoise::Perlin2D{
                 ymax = y;
             }
             double freq = 256;
-            bitmap_image image((const unsigned int)(xmax-xmin), 
-                               (const unsigned int)(ymax-ymin));
-            for (int xm=(int)xmin; xm<(int)xmax; xm++){
-                for (int ym=(int)ymin; ym<(int)ymax; ym++){
+            //bytes per pixel
+            #define bpp 4
+            double row_increment = (xmax-xmin)*bpp;
+            GLubyte bmp[static_cast<int>((ymax-ymin)*row_increment)];
+            for (int xm=static_cast<int>(xmin); 
+                     xm<static_cast<int>(xmax); xm++){
+                for (int ym=static_cast<int>(ymin); 
+                         ym<static_cast<int>(ymax); ym++){
+
+                    //define offsets
+                    double xoffset = bpp * xm;
+                    double yoffset = row_increment * ym;
+
+                    //create noise
                     double weight = octaveNoise(xm / freq, ym / freq);
                     //convert noise to double between 0 and 1
                     weight += 1;
                     weight /= 2;
                     //convert weight to grayscale for rgb
                     double gray = (255*weight*0.3) + (255*weight*0.59) + (255*weight*0.11);
-                    image.set_pixel((const unsigned int)(xm-xmin),
-                                    (const unsigned int)(ym-ymin),
-                                    (const unsigned char)gray,
-                                    (const unsigned char)gray,
-                                    (const unsigned char)gray);
+                    
+                    //grayscale in rgba
+                    bmp[static_cast<int>(xoffset + yoffset + 0)] = gray; //red
+                    bmp[static_cast<int>(xoffset + yoffset + 1)] = gray; //green
+                    bmp[static_cast<int>(xoffset + yoffset + 2)] = gray; //blue
+                    bmp[static_cast<int>(xoffset + yoffset + 3)] = gray; //alpha
                 }
             }
-            std::cout << "New texture generated with seed " << (int)Perlin2D::currentSeed() << std::endl;
-            image.save_image("texture.bmp");
+            std::cout << "New texture generated with seed " << static_cast<int>(Perlin2D::currentSeed()) << std::endl;
+            //fix segmentatin fault (probably from array)
+            glTexSubImage2D(GL_TEXTURE_2D, 0, bpp, (xmax-xmin)*bpp,
+                            xmax-xmin, ymax-ymin, GL_RGBA, GL_UNSIGNED_BYTE, 
+                            static_cast<const GLvoid*>(bmp));
         }
 
 };
@@ -95,7 +109,8 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
             int rgb[3];
             
             //create first texture upon initialization
-            setImage(*this, (double)mFBSize[0], (double)mFBSize[1]);
+            setImage(*this, static_cast<double>(mFBSize[0]), 
+                     static_cast<double>(mFBSize[1]));
 
             //create window
             Window *window = new Window(this, "Window Color");
@@ -129,7 +144,8 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
             Button *tb = window->add<Button>("Random Texture");
             tb->setCallback(
                 [this]{
-                    setImage(*this, (double)mFBSize[0], (double)mFBSize[1]);
+                    setImage(*this, static_cast<double>(mFBSize[0]), 
+                             static_cast<double>(mFBSize[1]));
                 }
             );
 
@@ -141,7 +157,8 @@ class ExampleApplication : public nanogui::Screen, public Noise2D{
             //set resize callback for screen
             setResizeCallback(
                 [this](const Eigen::Vector2i &s){
-                    setImage(*this, (double)s[0], (double)s[1], true);
+                    setImage(*this, static_cast<double>(s[0]), 
+                             static_cast<double>(s[1]), true);
                 }
             );
 
