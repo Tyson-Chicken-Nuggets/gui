@@ -60,7 +60,7 @@ namespace PerlinNoise{
 
             //sets seed to value passed or random value
             void seed(double newSeed=NULL){
-                newSeed!=NULL ? seed_v = newSeed : seed_v = (double)rng();
+                newSeed!=NULL ? seed_v = newSeed : seed_v = static_cast<double>(rng());
                 pop_p(newSeed);
             }
 
@@ -68,9 +68,9 @@ namespace PerlinNoise{
             double const noise(double x, double y, double z){
 
                 //find cube that contains point
-                int xint = (int)floor(x) & 255;
-                int yint = (int)floor(y) & 255;
-                int zint = (int)floor(z) & 255;
+                int xint = static_cast<int>(floor(x)) & 255;
+                int yint = static_cast<int>(floor(y)) & 255;
+                int zint = static_cast<int>(floor(z)) & 255;
         
                 //find point within that cube
                 x -= floor(x);
